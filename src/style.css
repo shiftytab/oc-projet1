@@ -7,6 +7,7 @@
     --bleu_2: #DEEBFF;
     --gris_bg: #f2f2f2;
 } 
+
 html, body {
     margin: 0;
     padding: 0;
@@ -39,14 +40,32 @@ header {
 .f10 {
     flex: 10;
 }
-.f5 {
-    flex: 5
+.f4 {
+    flex: 4
+}
+.space-section {
+    margin-bottom: 50px;
 }
 .marginleft {
     margin-left: 30px;
 }
-
+p {
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
 /* Classes */
+
+h2.section-title {
+    font-weight: 700;
+}
 
 .header-icon {
     position: relative;
@@ -153,6 +172,9 @@ nav.nav-header ul li.active {
     cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
+    border: none;
+    font: inherit;
+    outline: none;
 }
 .filter .tags {
     padding: 15px 0;
@@ -180,11 +202,18 @@ nav.nav-header ul li.active {
     cursor: pointer;
     margin-right: 15px;
 }
+
 .filter .tags .tag-list .tag:hover {
-    background-color: rgba(0,0,0,.015);
+    background-color: var(--bleu_1);
+}
+.filter .tags .tag-list .tag:hover > .tag-title {
+    color: #fff;
+}
+.filter .tags .tag-list .tag:hover .tag-icon {
+    background-color: rgba(0,0,0,0.15);
 }
 .filter .tags .tag-list .tag:hover .tag-icon i.fas{
-    transform: scale(1.2);
+    color: #fff;
 }
 .filter .tags .tag-list .tag .tag-icon {
     width:40px;
@@ -198,7 +227,6 @@ nav.nav-header ul li.active {
 .filter .tags .tag-list .tag .tag-icon i.fas{
     color: var(--bleu_1);
     font-size: 14px;
-    transition: .1s ease-in-out;
 }
 .filter .tags .tag-list .tag .tag-title {
     padding: 0 15px;
@@ -225,7 +253,7 @@ nav.nav-header ul li.active {
 .info-panel p {
     padding-left: 10px;
 }
-
+/* Cards */
 .flex-panel {
     display: flex;
     flex-direction: row;
@@ -240,8 +268,9 @@ nav.nav-header ul li.active {
     display: flex;
     flex-wrap: wrap
 }
+
 .cards-grid .card {
-    width: calc(33% - 40px);
+    width: calc(33% - 38px); /* 38 = (margin * 2 + padding * 2 + border width) */
     height: 200px;
     background: #fff;
     padding: 3px;
@@ -251,8 +280,7 @@ nav.nav-header ul li.active {
     -webkit-box-shadow: 0 1px 10px 1px rgb(0 0 0 / 15%);
     box-shadow: 0 1px 10px 1px rgb(0 0 0 / 15%);
     transition: all .2s ease-in-out;
-    margin-right: 25px;
-    margin-bottom: 25px;
+    margin: 15px;
     border: 2px solid transparent
 }
 .cards-grid .card:hover {
@@ -275,26 +303,22 @@ nav.nav-header ul li.active {
 .cards-grid .paddme {
     padding: 10px;
 }
-.cards-grid .card-title {
-    font-weight: 700;
-}
 .cards-grid .card-price {
     font-size: 14px;
 }
 .cards-grid .card-price .value {
     font-weight: 600;
 }
-.cards-grid .card-popularity {
+.cards-grid .card-review {
     padding-top: 5px;
 }
-.cards-grid .card-popularity i.fas{
+.cards-grid .card-review i.fas{
     color: var(--gris_bg);
     font-size: 14px;
 }
-.cards-grid .card-popularity i.fas.light{
+.cards-grid .card-review i.fas.light{
     color: var(--bleu_1)
 }
-
 .card-panel .more {
     padding: 15px;
     font-weight: 700;
@@ -313,3 +337,276 @@ nav.nav-header ul li.active {
 .card-panel .h3-icon .icon i.fas {
     font-size: 20px;
 }
+.top-host .card {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 15px;
+    height: 125px;
+    /* overflow: hidden; */
+    flex: 1 0 0;
+    margin-top: 30px;
+}
+.top-host .card:first-child {
+    margin-top: 15px;
+}
+.top-host .card .card-cover {
+    flex: 3;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    overflow: hidden;
+}
+.top-host .card .card-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.top-host .card .card-meta {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+.top-host .card .card-price {
+    font-size: 14px;
+    padding: 5px 0;
+}
+.top-host .card .card-review {
+    flex: 1;
+    align-items: flex-end;
+    display: flex;
+}
+.top-host .card .card-meta .card-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+.top-host .card .card-review .fas{
+    font-size: 13px;
+    margin-right: 2px;
+    color: var(--gris_bg);
+}
+.top-host .card .card-review .fas.light {
+    color: var(--bleu_1);
+}
+/* Activity */
+
+.wall-promo {
+    display: flex;
+}
+/* Activity -> Card */
+.wall-promo .card {
+    flex: 1;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 1px 10px 1px rgb(0 0 0 / 15%);
+    box-shadow: 0 1px 10px 1px rgb(0 0 0 / 15%);
+    display: flex;
+    flex-direction: column;
+}
+/* Activity -> Cards */
+.wall-promo .cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 40px;
+}
+.wall-promo .cards > .card {
+    flex: 1 0 0
+}
+.wall-promo .cards > .card.zoom {
+    flex: 1.5 0 0;
+}
+.wall-promo .cards > .card:first-child {
+    margin-bottom: 40px;
+}
+.wall-promo .cards:last-child {
+    margin-right: 0;
+}
+.wall-promo .card-preview {
+    flex: 1;
+    position: relative;
+    height: 0;
+}
+.wall-promo .card-preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.wall-promo .card-footer {
+    padding: 20px;
+}
+.wall-promo .card-footer p{
+    font-weight: 700;
+}
+
+
+
+
+/* Footer */
+footer {
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    background-color: var(--gris_bg);
+    margin-top: 30px;
+}
+
+footer ul {
+    flex: 1;
+    padding: 15px;
+    margin: 0;
+}
+
+footer ul .list-title {
+    font-weight: 700;
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+footer ul .list-item {
+    padding: 5px 0;
+    font-weight: 500;
+}
+
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+} 
+.show-mobile {
+    display: none !important;
+}
+.hide-mobile {
+    display: inherit;
+}
+@media screen and (max-width: 992px) {
+    .app {
+        width: 100%;
+        margin: 0;
+    }
+    .hide-mobile {
+        display: none !important;
+    }
+    .show-mobile {
+        display: inherit !important;
+    }
+    .container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    header {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+    .header-icon {
+        text-align: center;
+    }
+    nav.nav-header {
+        margin-top: 15px
+    }
+    nav.nav-header ul li {
+        border-top: 0;
+        border-bottom: 2px solid transparent;
+        padding: 15px;
+        font-size: 16px;
+        flex: 1;
+        margin: 0;
+        justify-content: center;
+    }
+    nav.nav-header {
+        display: block;
+    }
+    .brand-welcome h1 {
+        font-size: 22px;
+    }
+    .filter .search-bar {
+        width: 100%
+    }
+    .search-submit {
+        display: hide !important;
+    }
+    .search-submit-mobile {
+        display: block;
+    }
+    .filter .tags {
+        display: block;
+    }
+    .filter .tags .tag-list {
+        display: inline-block;
+        padding: 0;
+    }
+    .filter .tags .tag-list .tag {
+        display: inline-flex;
+        margin-bottom: 15px;
+    }
+    .flex-panel {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        flex-direction: column;
+    }
+    .card-panel {
+        display: block;
+        border-radius: 0;
+        margin: 0;
+    }
+    .card-panel.f10 {
+        order: 2;
+        background-color: transparent;
+    }
+    .card-panel.f4 {
+        order: 1;
+    }
+
+    .cards-grid .card {
+        display: block;
+        width: 100%;
+        margin: 15px 0
+    }
+    .wall-promo {
+        display: block;
+    }
+    .wall-promo .card {
+        width: 100%;
+        height: 200px;
+    }
+    .wall-promo .cards {
+        display: block;
+        margin: 20px 0;
+    }
+    .wall-promo .cards > .card:first-child {
+        margin-bottom: 20px;
+    }
+
+    footer, footer ul {
+        display: block
+    }
+    footer {
+        margin-top: 25px;
+    }
+    .space-section {
+        margin-bottom: 15px;
+    }
+    section {
+        padding: 0 15px
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 1250px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1450px;
+    }
+}
+
