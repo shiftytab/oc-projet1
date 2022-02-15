@@ -484,6 +484,7 @@ footer ul .list-item {
 .hide-mobile {
     display: inherit;
 }
+
 @media screen and (max-width: 992px) {
     .app {
         width: 100%;
@@ -599,10 +600,22 @@ footer ul .list-item {
     }
 }
 
+@media (min-width: 768px) and (max-width: 992px) {
+    .cards-grid .card {
+        display: inline-block;
+        width: 45%;
+        margin: 15px auto;
+        margin-right: 25px;
+    }
+    .wall-promo .card {
+        height: 250px;
+    }
+}
 @media (min-width: 992px) {
     .container {
         width: 1250px;
     }
+    
 }
 @media (min-width: 1200px) {
     .container {
