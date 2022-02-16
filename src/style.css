@@ -1,13 +1,14 @@
+/* NOTE Les importations */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Var & Settings */
-
+/* NOTE Variables CSS */
 :root {
     --bleu_1: #0065FC;
     --bleu_2: #DEEBFF;
     --gris_bg: #f2f2f2;
 } 
 
+/* SECTION Générales */
 html, body {
     margin: 0;
     padding: 0;
@@ -20,18 +21,15 @@ body {
 }
 
 .app {
-    width: 95%;
     height: 100%;
     position: relative;
     margin: 0 auto;
-
 }
 
 header {
     display: flex;
     flex-direction: row;
     position: relative;
-    width: 95%;
     height: 65px;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -56,17 +54,39 @@ p {
 ul {
     list-style-type: none;
 }
+
 a {
     color: inherit;
     text-decoration: none;
     cursor: pointer;
 }
-/* Classes */
 
 h2.section-title {
     font-weight: 700;
 }
 
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+} 
+.show-mobile {
+    display: none !important;
+}
+.hide-mobile {
+    display: inherit;
+}
+
+/* !SECTION Générales */
+
+
+
+/* SECTION Les classes */
+
+/* NOTE En tête */
 .header-icon {
     position: relative;
 }
@@ -81,7 +101,7 @@ nav.nav-header {
 
 nav.nav-header ul {
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -98,7 +118,7 @@ nav.nav-header ul li {
     display: flex;
     font-size: 20px;
     cursor: pointer;
-    transition: all .2 ease-in-out;
+    transition: all .2s ease-in-out;
 }
 nav.nav-header ul li:hover {
     border-color: var(--bleu_2);
@@ -107,6 +127,7 @@ nav.nav-header ul li.active {
     border-color: var(--bleu_1);
     color: var(--bleu_1);
 }
+/* NOTE Brand welcome*/
 .brand-welcome h1 {
     margin: 0;
     padding: 0;
@@ -116,6 +137,7 @@ nav.nav-header ul li.active {
     margin: 12px 0;
     padding: 0;
 }
+/* NOTE Les filtres */
 .filter {
     padding-top: 15px;
 }
@@ -128,6 +150,7 @@ nav.nav-header ul li.active {
     height: 40px;
     width: 350px;
     overflow: hidden;
+    margin: 15px 0;
 }
 
 .filter .search-bar .search-icon {
@@ -232,7 +255,7 @@ nav.nav-header ul li.active {
     padding: 0 15px;
     font-weight: 700;
 }
-
+/* NOTE Info panel */
 .info-panel {
     display: flex;
     align-items: center;
@@ -253,7 +276,8 @@ nav.nav-header ul li.active {
 .info-panel p {
     padding-left: 10px;
 }
-/* Cards */
+
+/* NOTE Les panels & cartes*/
 .flex-panel {
     display: flex;
     flex-direction: row;
@@ -337,6 +361,7 @@ nav.nav-header ul li.active {
 .card-panel .h3-icon .icon i.fas {
     font-size: 20px;
 }
+/* NOTE Les plus populaires */
 .top-host .card {
     display: flex;
     flex-direction: row;
@@ -377,10 +402,7 @@ nav.nav-header ul li.active {
     align-items: flex-end;
     display: flex;
 }
-.top-host .card .card-meta .card-title {
-    font-size: 16px;
-    font-weight: 700;
-}
+
 .top-host .card .card-review .fas{
     font-size: 13px;
     margin-right: 2px;
@@ -389,12 +411,12 @@ nav.nav-header ul li.active {
 .top-host .card .card-review .fas.light {
     color: var(--bleu_1);
 }
-/* Activity */
+/* NOTE Activités & cartes */
 
 .wall-promo {
     display: flex;
 }
-/* Activity -> Card */
+
 .wall-promo .card {
     flex: 1;
     height: 450px;
@@ -405,7 +427,7 @@ nav.nav-header ul li.active {
     display: flex;
     flex-direction: column;
 }
-/* Activity -> Cards */
+
 .wall-promo .cards {
     flex: 1;
     display: flex;
@@ -441,10 +463,7 @@ nav.nav-header ul li.active {
     font-weight: 700;
 }
 
-
-
-
-/* Footer */
+/* NOTE FOOTER */
 footer {
     padding: 30px;
     display: flex;
@@ -471,20 +490,10 @@ footer ul .list-item {
 }
 
 
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-} 
-.show-mobile {
-    display: none !important;
-}
-.hide-mobile {
-    display: inherit;
-}
+/* !SECTION Les classes */
 
+/* SECTION Les Media Query */
+/* NOTE Mobile */
 @media screen and (max-width: 992px) {
     .app {
         width: 100%;
@@ -529,9 +538,6 @@ footer ul .list-item {
     }
     .filter .search-bar {
         width: 100%
-    }
-    .search-submit {
-        display: hide !important;
     }
     .search-submit-mobile {
         display: block;
@@ -599,7 +605,7 @@ footer ul .list-item {
         padding: 0 15px
     }
 }
-
+/* NOTE Tablette */
 @media (min-width: 768px) and (max-width: 992px) {
     .cards-grid .card {
         display: inline-block;
@@ -611,15 +617,16 @@ footer ul .list-item {
         height: 250px;
     }
 }
+/* NOTE Ordinateur */
 @media (min-width: 992px) {
     .container {
         width: 1250px;
-    }
-    
+    } 
 }
+
 @media (min-width: 1200px) {
     .container {
         width: 1450px;
     }
 }
-
+/* !SECTION Les Media Query */
