@@ -614,7 +614,17 @@ footer ul .list-item {
         margin-right: 25px;
     }
     .wall-promo .card {
-        height: 250px;
+        display: inline-flex;
+        width: 45%;
+        margin: 20px;
+    }
+    .wall-promo .cards {
+        display: inline;
+    }
+    .top-host .card {
+        width: 45%;
+        margin: 2px auto;
+        display: inline-flex;
     }
 }
 /* NOTE Ordinateur */
