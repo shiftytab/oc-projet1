@@ -579,6 +579,7 @@ footer ul .list-item {
     }
     .wall-promo {
         display: block;
+        text-align: center;
     }
     .wall-promo .card {
         width: 100%;
@@ -615,15 +616,20 @@ footer ul .list-item {
     }
     .wall-promo .card {
         display: inline-flex;
-        width: 45%;
+        width: calc(50% - 45px);
         margin: 20px;
     }
     .wall-promo .cards {
         display: inline;
     }
+    .top-host {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
     .top-host .card {
-        width: 45%;
-        margin: 2px auto;
+        min-width: 45%;
+        margin: 5px 5px;
         display: inline-flex;
     }
 }
