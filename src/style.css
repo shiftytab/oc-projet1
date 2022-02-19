@@ -629,6 +629,12 @@ footer ul .list-item {
 }
 /* NOTE Tablette */
 @media screen and (min-width: 768px) and (max-width: 1250px) {
+    .hide-mobile {
+        display: inherit !important;
+    }
+    .show-mobile {
+        display: none !important;
+    }
     .cards-grid .card {
         display: inline-block;
         width: 45%;
