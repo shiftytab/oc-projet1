@@ -92,6 +92,8 @@ h2.section-title {
 /* NOTE En tête */
 .header-icon {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .header-icon img {
