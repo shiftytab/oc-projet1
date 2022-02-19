@@ -73,9 +73,11 @@ h2.section-title {
     margin-right: auto;
     margin-left: auto;
 } 
+
 .show-mobile {
     display: none !important;
 }
+
 .hide-mobile {
     display: inherit;
 }
@@ -293,6 +295,10 @@ nav.nav-header ul li.active {
     flex-wrap: wrap
 }
 
+.card .card-title {
+    font-weight: 700;
+}
+
 .cards-grid .card {
     width: calc(33% - 38px); /* 38 = (margin * 2 + padding * 2 + border width) */
     height: 200px;
@@ -312,6 +318,7 @@ nav.nav-header ul li.active {
     transform: translateY(-3px);
     border-color: var(--bleu_1)
 }
+
 .cards-grid .card-cover {
     width: 100%;
     height: 60%;
@@ -362,6 +369,11 @@ nav.nav-header ul li.active {
     font-size: 20px;
 }
 /* NOTE Les plus populaires */
+
+.top-host {
+    padding: 15px 0;
+}
+
 .top-host .card {
     display: flex;
     flex-direction: row;
@@ -372,6 +384,8 @@ nav.nav-header ul li.active {
     /* overflow: hidden; */
     flex: 1 0 0;
     margin-top: 30px;
+    -webkit-box-shadow: 0 1px 10px 1px rgb(0 0 0 / 15%);
+    box-shadow: 0 1px 10px 1px rgb(0 0 0 / 15%);
 }
 .top-host .card:first-child {
     margin-top: 15px;
@@ -458,6 +472,7 @@ nav.nav-header ul li.active {
 }
 .wall-promo .card-footer {
     padding: 20px;
+    text-align: left;
 }
 .wall-promo .card-footer p{
     font-weight: 700;
@@ -493,6 +508,7 @@ footer ul .list-item {
 /* !SECTION Les classes */
 
 /* SECTION Les Media Query */
+
 /* NOTE Mobile */
 @media screen and (max-width: 992px) {
     .app {
@@ -517,6 +533,7 @@ footer ul .list-item {
     }
     .header-icon {
         text-align: center;
+        padding-top: 20px;
     }
     nav.nav-header {
         margin-top: 15px
@@ -577,6 +594,7 @@ footer ul .list-item {
         width: 100%;
         margin: 15px 0
     }
+    
     .wall-promo {
         display: block;
         text-align: center;
@@ -603,11 +621,11 @@ footer ul .list-item {
         margin-bottom: 15px;
     }
     section {
-        padding: 0 15px
+        padding: 0 30px
     }
 }
 /* NOTE Tablette */
-@media (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
     .cards-grid .card {
         display: inline-block;
         width: 45%;
@@ -634,7 +652,7 @@ footer ul .list-item {
     }
 }
 /* NOTE Ordinateur */
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
     .container {
         width: 1250px;
     } 
@@ -645,4 +663,5 @@ footer ul .list-item {
         width: 1450px;
     }
 }
+
 /* !SECTION Les Media Query */
